@@ -95,6 +95,11 @@ RCT_EXPORT_METHOD(setNamedUserId:(NSString *)nameUserId) {
     [UAirship namedUser].identifier = nameUserId;
 }
 
+RCT_EXPORT_METHOD(getNamedUserId:(RCTResponseSenderBlock)callback) {
+    NSString *namedUserIDString = [UAirship namedUser].identifier;
+    callback(@[ @(namedUserIDString) ]);
+}
+
 RCT_EXPORT_METHOD(handleBackgroundNotification) {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 

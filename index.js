@@ -128,6 +128,15 @@ class ReactNativeUA {
         bridge.setNamedUserId(nameUserId);
     }
 
+    static get_named_user_id() {
+        return new Promise((resolve, reject) => {
+            bridge.getNamedUserId(namedUserID => {
+                callback && callback(null, namedUserID);
+                resolve(namedUserID);
+            })
+        })
+    }
+
     static on_notification (callback) {
         notification_listeners.push(callback);
     }
