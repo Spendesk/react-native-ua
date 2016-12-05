@@ -128,11 +128,20 @@ class ReactNativeUA {
         bridge.setNamedUserId(nameUserId);
     }
 
-    static get_named_user_id() {
+    static get_named_user_id (callback) {
         return new Promise((resolve, reject) => {
             bridge.getNamedUserId(namedUserID => {
                 callback && callback(null, namedUserID);
                 resolve(namedUserID);
+            })
+        })
+    }
+
+    static get_channel_id (callback) {
+        return new Promise((resolve, reject) => {
+            bridge.getChannelId(channelID => {
+                callback && callback(null, channelID);
+                resolve(channelID);
             })
         })
     }

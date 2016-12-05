@@ -96,8 +96,13 @@ RCT_EXPORT_METHOD(setNamedUserId:(NSString *)nameUserId) {
 }
 
 RCT_EXPORT_METHOD(getNamedUserId:(RCTResponseSenderBlock)callback) {
-    NSString *namedUserIDString = [UAirship namedUser].identifier;
-    callback(@[ @(namedUserIDString) ]);
+  NSString *namedUserIDString = [UAirship namedUser].identifier;
+  callback(@[namedUserIDString]);
+}
+
+RCT_EXPORT_METHOD(getChannelId:(RCTResponseSenderBlock)callback) {
+  NSString *channelID = [UAirship push].channelID;
+  callback(@[channelID]);
 }
 
 RCT_EXPORT_METHOD(handleBackgroundNotification) {

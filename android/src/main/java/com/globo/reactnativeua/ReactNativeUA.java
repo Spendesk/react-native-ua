@@ -89,6 +89,12 @@ public class ReactNativeUA extends ReactContextBaseJavaModule {
         callback.invoke(UAirship.shared().getNamedUser().getId());
     }
 
+
+    @ReactMethod
+    public void getChannelId(Callback callback) {
+        callback.invoke(UAirship.shared().getPushManager().getChannelId());
+    }
+
     @ReactMethod
     public void enableLocationUpdates() {
         UAirship.shared().getLocationManager().setLocationUpdatesEnabled(true);
