@@ -102,7 +102,11 @@ RCT_EXPORT_METHOD(getNamedUserId:(RCTResponseSenderBlock)callback) {
 
 RCT_EXPORT_METHOD(getChannelId:(RCTResponseSenderBlock)callback) {
   NSString *channelID = [UAirship push].channelID;
-  callback(@[channelID]);
+  if (channelID) {
+    callback(@[channelID]);
+  } else {
+    callback(@[@""]);
+  }
 }
 
 RCT_EXPORT_METHOD(handleBackgroundNotification) {
