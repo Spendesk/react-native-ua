@@ -59,7 +59,7 @@ RCT_EXPORT_METHOD(enableNotification) {
 
     if ([defaults objectForKey:@"first_time_notification_enable"]) {
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 
     } else {
 
